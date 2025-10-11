@@ -10,7 +10,7 @@
 
 > Matheus
 
-> Tk Eri
+> Erika Massao
 
 ## How to start:
 
