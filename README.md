@@ -12,6 +12,8 @@
 
 > Erika Massao
 
+> Peres Julião
+
 ## How to start:
 
 Clone the repository
