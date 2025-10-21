@@ -1,5 +1,4 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -7,7 +6,7 @@
         "./src/*"
       ],
       "@/app/*": [
-        "./app/*"
+        "./src/app/*"
       ],
       "@/features/*": [
         "./src/features/*"
