@@ -1,11 +1,15 @@
+import Footer from "@/features/common/Footer";
 import Header from "@/features/common/Header";
 
 
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Header />
+      <Footer  />
     </>
   )
 }
+
+export default Home
