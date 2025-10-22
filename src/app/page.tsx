@@ -1,4 +1,4 @@
-import Header from "@/features/company/components/Header";
+import Header from "@/features/common/Header";
 
 
 
