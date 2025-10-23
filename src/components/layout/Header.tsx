@@ -5,6 +5,14 @@ import Link from "next/link"
 import Menu from "./Menu"
 import Cart from "./Cart"
 
+const links = [
+  { name: "Acessórios", href: "/" },
+  { name: "Bermudas & Shorts", href: "/" },
+  { name: "Blusas & Moletons", href: "/" },
+  { name: "Calças", href: "/" },
+  { name: "Camisetas", href: "/" },
+]
+
 const Header = () =>  {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-300 bg-[#e8e4dc]">
@@ -36,21 +44,15 @@ const Header = () =>  {
 
       <div className="hidden md:block border-t border-zinc-300 bg-[#e8e4dc] px-4 py-2 md:px-12 lg:px-20 overflow-x-auto">
         <nav className="flex justify-center gap-6 whitespace-nowrap">
-          <Link href="/" className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium">
-            Acessórios
-          </Link>
-          <Link href="/" className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium">
-            Bermudas & Shorts
-          </Link>
-          <Link href="#" className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium">
-            Blusas & Moletons
-          </Link>
-          <Link href="#" className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium">
-            Calças
-          </Link>
-          <Link href="#" className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium">
-            Camisetas
-          </Link>
+          {links.map(link => (
+            <Link  
+              key={link.name}
+              href={link.href} 
+              className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium"
+            >
+              {link.name}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
