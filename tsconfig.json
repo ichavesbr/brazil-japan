@@ -39,8 +39,6 @@
 
     // Next.js específico
     "plugins": [{ "name": "next" }],
-    "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-    "exclude": ["node_modules", ".next"],
 
     "sourceMap": true,
     "declaration": true,
@@ -50,5 +48,7 @@
     "verbatimModuleSyntax": true,
     "noUncheckedSideEffectImports": false,
     "moduleDetection": "force"
-  }
+  },
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", ".next"]
 }
