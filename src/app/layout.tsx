@@ -3,6 +3,8 @@ import { Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import PrelineProvider from '@/components/providers/PrelineProvider'
+import PreloadProducts from '@/components/providers/PreloadProducts'
 
 const roboto = Roboto({
   variable: '--font-roboto',
@@ -23,9 +25,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${roboto.variable} antialiased`}>
-        <Header />
-        <main className="min-h-[calc(100vh-200px)]">{children}</main>
-        <Footer />
+        <PreloadProducts>
+          <Header />
+          <PrelineProvider>
+            <main className="min-h-[calc(100vh-200px)]">{children}</main>
+          </PrelineProvider>
+          <Footer />
+        </PreloadProducts>
       </body>
     </html>
   )

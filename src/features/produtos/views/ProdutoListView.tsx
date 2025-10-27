@@ -10,7 +10,7 @@ import { type FormattedProduto } from '@/features/produtos/utils/formatProduto'
 
 export function ProdutoListView() {
   const router = useRouter()
-  const { produtos } = useProduto()
+  const { produtos, removeProduto } = useProduto()
 
   function handleCreate() {
     router.push('/produtos/create')
@@ -20,6 +20,10 @@ export function ProdutoListView() {
     router.push(`/produtos/${produto.id}/edit`)
   }
 
+  function handleDelete(id: string) {
+    removeProduto(id)
+  }
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-4">
@@ -27,7 +31,7 @@ export function ProdutoListView() {
         <Button onClick={handleCreate}>Novo Produto</Button>
       </div>
 
-      <ProdutoList produtos={produtos} onEdit={handleEdit} />
+      <ProdutoList produtos={produtos} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   )
 }

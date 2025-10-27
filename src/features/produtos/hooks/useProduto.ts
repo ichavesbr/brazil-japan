@@ -6,6 +6,7 @@ import {
   createProduto,
   updateProduto,
   getProdutoById,
+  deleteProduto,
 } from '@/features/produtos/services/produto.service'
 
 import { formatProdutoList, type FormattedProduto } from '@/features/produtos/utils/formatProduto'
@@ -15,9 +16,20 @@ import { type Produto, type ProdutoInputData } from '@/features/produtos/schemas
 export function useProduto() {
   const [produtos, setProdutos] = useState<FormattedProduto[]>([])
 
-  useEffect(() => {
-    setProdutos(formatProdutoList(getProdutos()))
+  const loadProdutos = useCallback(() => {
+    const produtosFromStorage = getProdutos()
+    console.log('useProduto - loadProdutos:', produtosFromStorage)
+    setProdutos(formatProdutoList(produtosFromStorage))
   }, [])
+
+  useEffect(() => {
+    loadProdutos()
+
+    window.addEventListener('produtos-loaded', loadProdutos)
+    return () => {
+      window.removeEventListener('produtos-loaded', loadProdutos)
+    }
+  }, [loadProdutos])
 
   const addProduto = useCallback((data: ProdutoInputData): void => {
     const newProduto = createProduto(data)
@@ -43,10 +55,18 @@ export function useProduto() {
     return getProdutoById(id)
   }, [])
 
+  const removeProduto = useCallback((id: string): void => {
+    const success = deleteProduto(id)
+    if (success) {
+      setProdutos(prevProdutos => prevProdutos.filter(produto => produto.id !== id))
+    }
+  }, [])
+
   return {
     produtos,
     addProduto,
     editProduto,
     getProduto,
+    removeProduto,
   }
 }

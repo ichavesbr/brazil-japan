@@ -1,9 +1,3 @@
-/**
- * Produtos Feature - Barrel Export
- *
- * Centralizes all exports from the produtos feature for cleaner imports.
- */
-
 export { ProdutoListView } from './views/ProdutoListView'
 export { ProdutoCreateView } from './views/ProdutoCreateView'
 export { ProdutoEditView } from './views/ProdutoEditView'

@@ -8,11 +8,6 @@ import { H1 } from '@/components/ui/typography'
 import { Button } from '@/components/ui/button'
 import { type FormattedCompany } from '@/features/company/utils/formatCompany'
 
-/**
- * View para a lista de empresas.
- * Responsabilidade: Exibir a lista, o cabeçalho,
- * e lidar com as ações de navegar para 'criar' ou 'editar'.
- */
 export function CompanyListView() {
   const router = useRouter()
 

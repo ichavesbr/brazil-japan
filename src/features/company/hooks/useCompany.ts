@@ -12,9 +12,6 @@ import { formatCompanyList, type FormattedCompany } from '@/features/company/uti
 
 import { type Company, type CompanyInputData } from '@/features/company/schemas/company.schema'
 
-/**
- * Hook para gerenciar empresas na SPA
- */
 export function useCompany() {
   const [companies, setCompanies] = useState<FormattedCompany[]>([])
 

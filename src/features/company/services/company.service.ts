@@ -2,9 +2,6 @@ import { type Company, type CompanyInputData } from '@/features/company/schemas/
 
 const STORAGE_KEY: string = 'myapp_brazil_japan_companies'
 
-/**
- * Retorna a lista de empresas do localStorage
- */
 export function getCompanies(): Company[] {
   const stored = localStorage.getItem(STORAGE_KEY)
 
@@ -18,16 +15,10 @@ export function getCompanies(): Company[] {
   }
 }
 
-/**
- * Salva a lista de empresas no localStorage
- */
 function saveCompanies(companies: Company[]): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(companies))
 }
 
-/**
- * Cria uma nova empresa
- */
 export function createCompany(data: CompanyInputData): Company {
   const companies = getCompanies()
 
@@ -44,9 +35,6 @@ export function createCompany(data: CompanyInputData): Company {
   return newCompany
 }
 
-/**
- * Atualiza uma empresa existente
- */
 export function updateCompany(id: string, data: CompanyInputData): Company | null {
   const companies = getCompanies()
   const index = companies.findIndex(company => company.id === id)
@@ -72,10 +60,6 @@ export function updateCompany(id: string, data: CompanyInputData): Company | nul
   return companies[index]
 }
 
-/**
- * Busca uma empresa por ID
- * @param {string} id
- */
 export function getCompanyById(id: string): Company | null {
   const companies = getCompanies()
   return companies.find(data => data.id === id) || null

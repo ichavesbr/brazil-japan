@@ -1,9 +1,3 @@
-/**
- * Pedidos Feature - Barrel Export
- *
- * Centralizes all exports from the pedidos feature for cleaner imports.
- */
-
 export { PedidoListView } from './views/PedidoListView'
 export { PedidoCreateView } from './views/PedidoCreateView'
 export { PedidoEditView } from './views/PedidoEditView'

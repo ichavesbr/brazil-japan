@@ -6,11 +6,6 @@ import { CompanyForm } from '@/features/company/components/CompanyForm'
 import { H1 } from '@/components/ui/typography'
 import { type CompanyInputData } from '@/features/company/schemas/company.schema'
 
-/**
- * View para a criação de uma nova empresa.
- * Responsabilidade: Exibir o formulário e lidar
- * com as ações de 'submit' e 'cancel'.
- */
 export function CompanyCreateView() {
   const { addCompany } = useCompany()
   const router = useRouter()

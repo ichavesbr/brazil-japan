@@ -11,11 +11,6 @@ interface CompanyEditViewProps {
   id: string
 }
 
-/**
- * View para a edição de uma empresa.
- * Responsabilidade: Buscar a empresa pelo 'id',
- * preencher o formulário e lidar com 'submit' e 'cancel'.
- */
 export function CompanyEditView({ id }: CompanyEditViewProps) {
   const { editCompany, getCompany } = useCompany()
   const router = useRouter()

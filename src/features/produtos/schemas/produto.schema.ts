@@ -7,6 +7,7 @@ export interface Produto {
   preco: number
   estoque: number
   status: ProdutoStatus
+  image?: string
   createdAt: string
   updatedAt?: string | null
 }
@@ -17,4 +18,5 @@ export interface ProdutoInputData {
   preco: number
   estoque: number
   status: ProdutoStatus
+  image?: string
 }

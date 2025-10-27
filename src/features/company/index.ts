@@ -1,17 +1,3 @@
-/**
- * Company Feature - Barrel Export
- *
- * Centralizes all exports from the company feature for cleaner imports.
- *
- * @example
- *
- * import { CompanyListView } from '@/features/company/views/CompanyListView'
- * import { useCompany } from '@/features/company/hooks/useCompany'
- *
- *
- * import { CompanyListView, useCompany } from '@/features/company'
- */
-
 export { CompanyListView } from './views/CompanyListView'
 export { CompanyCreateView } from './views/CompanyCreateView'
 export { CompanyEditView } from './views/CompanyEditView'

@@ -1,9 +1,3 @@
-/**
- * Clientes Feature - Barrel Export
- *
- * Centralizes all exports from the clientes feature for cleaner imports.
- */
-
 export { ClienteListView } from './views/ClienteListView'
 export { ClienteCreateView } from './views/ClienteCreateView'
 export { ClienteEditView } from './views/ClienteEditView'

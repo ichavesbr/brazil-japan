@@ -29,6 +29,7 @@ export function createProduto(data: ProdutoInputData): Produto {
     preco: data.preco,
     estoque: data.estoque,
     status: data.status,
+    image: data.image,
     createdAt: new Date().toISOString(),
     updatedAt: null,
   }
@@ -59,6 +60,7 @@ export function updateProduto(id: string, data: ProdutoInputData): Produto | nul
     preco: data.preco,
     estoque: data.estoque,
     status: data.status,
+    image: data.image,
     updatedAt: new Date().toISOString(),
   }
 
@@ -69,4 +71,17 @@ export function updateProduto(id: string, data: ProdutoInputData): Produto | nul
 export function getProdutoById(id: string): Produto | null {
   const produtos = getProdutos()
   return produtos.find(data => data.id === id) || null
+}
+
+export function deleteProduto(id: string): boolean {
+  const produtos = getProdutos()
+  const index = produtos.findIndex(produto => produto.id === id)
+
+  if (index === -1) {
+    return false
+  }
+
+  produtos.splice(index, 1)
+  saveProdutos(produtos)
+  return true
 }
