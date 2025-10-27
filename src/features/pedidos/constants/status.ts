@@ -1,0 +1,9 @@
+export const PEDIDO_STATUS = {
+  PENDENTE: 'PENDENTE',
+  PROCESSANDO: 'PROCESSANDO',
+  ENVIADO: 'ENVIADO',
+  ENTREGUE: 'ENTREGUE',
+  CANCELADO: 'CANCELADO',
+}
+
+export type PedidoStatus = (typeof PEDIDO_STATUS)[keyof typeof PEDIDO_STATUS]
