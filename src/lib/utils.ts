@@ -1,5 +1,5 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 /**
  * Concatena e mescla classes do Tailwind de forma inteligente,
@@ -8,5 +8,5 @@ import { twMerge } from "tailwind-merge";
  * @returns Uma string de classes mescladas.
  */
 export function cn(...inputs: ClassValue[]): string {
-  return twMerge(clsx(...inputs));
+  return twMerge(clsx(...inputs))
 }

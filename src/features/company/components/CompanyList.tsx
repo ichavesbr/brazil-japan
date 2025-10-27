@@ -1,22 +1,22 @@
-import { type FormattedCompany } from "../utils/formatCompany";
-import { Button } from "@/components/ui/button";
-import { P } from "@/components/ui/typography";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { type FormattedCompany } from '../utils/formatCompany'
+import { Button } from '@/components/ui/button'
+import { P } from '@/components/ui/typography'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 interface CompanyListProps {
-  companies: FormattedCompany[];
+  companies: FormattedCompany[]
 
-  onEdit: (company: FormattedCompany) => void;
+  onEdit: (company: FormattedCompany) => void
 }
 
 export function CompanyList({ companies, onEdit }: CompanyListProps) {
   if (companies.length === 0) {
-    return <P>Nenhuma empresa cadastrada.</P>;
+    return <P>Nenhuma empresa cadastrada.</P>
   }
 
   return (
     <div className="space-y-4">
-      {companies.map((company) => (
+      {companies.map(company => (
         <Card key={company.id}>
           <CardHeader>
             <CardTitle>{company.name}</CardTitle>
@@ -35,5 +35,5 @@ export function CompanyList({ companies, onEdit }: CompanyListProps) {
         </Card>
       ))}
     </div>
-  );
+  )
 }

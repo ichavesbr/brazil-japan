@@ -24,7 +24,7 @@ export const storage = {
 
     try {
       const item = localStorage.getItem(getKey(key))
-      return item ? JSON.parse(item) as T : null
+      return item ? (JSON.parse(item) as T) : null
     } catch (error) {
       console.error(`Error reading from localStorage (key: ${key}):`, error)
       return null

@@ -1,19 +1,19 @@
-import { Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import Link from "next/link"
-import Menu from "./Menu"
-import Cart from "./Cart"
+import { Search } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import Link from 'next/link'
+import Menu from './Menu'
+import Cart from './Cart'
 
 const links = [
-  { name: "Início", href: "/" },
-  { name: "Produtos", href: "/produtos" },
-  { name: "Clientes", href: "/clientes" },
-  { name: "Pedidos", href: "/pedidos" },
-  { name: "Empresas", href: "/company/list" },
+  { name: 'Início', href: '/' },
+  { name: 'Produtos', href: '/produtos' },
+  { name: 'Clientes', href: '/clientes' },
+  { name: 'Pedidos', href: '/pedidos' },
+  { name: 'Empresas', href: '/company/list' },
 ]
 
-const Header = () =>  {
+const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-300 bg-[#e8e4dc]">
       <div className="flex items-center gap-3 px-4 py-3 md:px-12 lg:px-20 md:justify-between">
@@ -49,9 +49,9 @@ const Header = () =>  {
       <div className="hidden md:block border-t border-zinc-300 bg-[#e8e4dc] px-4 py-2 md:px-12 lg:px-20 overflow-x-auto">
         <nav className="flex justify-center gap-6 whitespace-nowrap">
           {links.map(link => (
-            <Link  
+            <Link
               key={link.name}
-              href={link.href} 
+              href={link.href}
               className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium"
             >
               {link.name}
@@ -63,4 +63,4 @@ const Header = () =>  {
   )
 }
 
-export default Header;
+export default Header

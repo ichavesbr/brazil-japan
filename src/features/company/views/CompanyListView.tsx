@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { useRouter } from "next/navigation";
-import { useCompany } from "@/features/company/hooks/useCompany";
-import { CompanyList } from "@/features/company/components/CompanyList";
+import { useRouter } from 'next/navigation'
+import { useCompany } from '@/features/company/hooks/useCompany'
+import { CompanyList } from '@/features/company/components/CompanyList'
 
-import { H1 } from "@/components/ui/typography";
-import { Button } from "@/components/ui/button";
-import { type FormattedCompany } from "@/features/company/utils/formatCompany";
+import { H1 } from '@/components/ui/typography'
+import { Button } from '@/components/ui/button'
+import { type FormattedCompany } from '@/features/company/utils/formatCompany'
 
 /**
  * View para a lista de empresas.
@@ -14,16 +14,16 @@ import { type FormattedCompany } from "@/features/company/utils/formatCompany";
  * e lidar com as ações de navegar para 'criar' ou 'editar'.
  */
 export function CompanyListView() {
-  const router = useRouter();
+  const router = useRouter()
 
-  const { companies } = useCompany();
+  const { companies } = useCompany()
 
   function handleCreate() {
-    router.push("/company/create");
+    router.push('/company/create')
   }
 
   function handleEdit(company: FormattedCompany) {
-    router.push(`/company/${company.id}/edit`);
+    router.push(`/company/${company.id}/edit`)
   }
 
   return (
@@ -35,5 +35,5 @@ export function CompanyListView() {
 
       <CompanyList companies={companies} onEdit={handleEdit} />
     </div>
-  );
+  )
 }

@@ -83,14 +83,14 @@ app/
 ```tsx
 // ✅ Exemplo de proxy
 // app/company/list/page.tsx
-import { CompanyListView } from "@/features/company/views/CompanyListView";
+import { CompanyListView } from '@/features/company/views/CompanyListView'
 
 /**
  * Rota para /company/list
  * Responsabilidade: Apenas carregar e renderizar a View correspondente.
  */
 export default function CompanyListPage() {
-  return <CompanyListView />;
+  return <CompanyListView />
 }
 ```
 
@@ -272,14 +272,14 @@ As rotas em `app/company/...` são **proxies** que apenas importam as views da f
 // ❌ NÃO faça assim (lógica na rota):
 // app/company/list/page.tsx
 export default function CompanyListPage() {
-  const [companies, setCompanies] = useState([]);
+  const [companies, setCompanies] = useState([])
   // ... lógica aqui
 }
 
 // ✅ Faça assim (proxy):
 // app/company/list/page.tsx
-import { CompanyListView } from "@/features/company/views/CompanyListView";
-export default CompanyListView;
+import { CompanyListView } from '@/features/company/views/CompanyListView'
+export default CompanyListView
 ```
 
 **Por quê?**
