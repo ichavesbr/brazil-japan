@@ -2,9 +2,6 @@ import { type Cliente } from '@/features/clientes/schemas/cliente.schema'
 
 import { CLIENTE_STATUS, type ClienteStatus } from '@/features/clientes/constants/status'
 
-/**
- * Formata o nome do cliente (ex.: remove espaços extras e capitaliza cada palavra)
- */
 export function formatClienteName(nome: string): string {
   if (!nome) return ''
 
@@ -15,9 +12,6 @@ export function formatClienteName(nome: string): string {
     .join(' ')
 }
 
-/**
- * Formata CPF para exibição (000.000.000-00)
- */
 export function formatClienteCPF(cpf: string): string {
   if (!cpf) return ''
 
@@ -28,9 +22,6 @@ export function formatClienteCPF(cpf: string): string {
   return cleaned.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')
 }
 
-/**
- * Formata telefone para exibição (00) 00000-0000
- */
 export function formatClienteTelefone(telefone: string): string {
   if (!telefone) return ''
 
@@ -47,9 +38,6 @@ export function formatClienteTelefone(telefone: string): string {
   return telefone
 }
 
-/**
- * Converte o status para um label legível
- */
 export function formatClienteStatus(status: ClienteStatus): string {
   switch (status) {
     case CLIENTE_STATUS.ATIVO:
@@ -63,10 +51,6 @@ export function formatClienteStatus(status: ClienteStatus): string {
   }
 }
 
-/**
- * Define a "forma" de um cliente após ele ser formatado para exibição.
- * estende o 'Cliente' original e adiciona as novas propriedades.
- */
 export interface FormattedCliente extends Cliente {
   statusLabel: string
   cpfFormatted: string
@@ -74,9 +58,6 @@ export interface FormattedCliente extends Cliente {
   createdAtFormatted: string
 }
 
-/**
- * Formata datas para exibição (dd/mm/yyyy)
- */
 export function formatClienteDate(isoDate: string): string {
   if (!isoDate) return 'Data indisponível'
 
@@ -94,9 +75,6 @@ export function formatClienteDate(isoDate: string): string {
   }
 }
 
-/**
- * Formata uma lista de clientes para exibição
- */
 export function formatClienteList(clientes: Cliente[]): FormattedCliente[] {
   if (!clientes || clientes.length === 0) return []
 

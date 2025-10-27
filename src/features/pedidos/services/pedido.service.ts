@@ -1,11 +1,7 @@
 import { type Pedido, type PedidoInputData } from '@/features/pedidos/schemas/pedido.schema'
 
-// A chave do localStorage é uma constante privada deste módulo.
 const STORAGE_KEY: string = 'myapp_brazil_japan_pedidos'
 
-/**
- * Retorna a lista de pedidos do localStorage
- */
 export function getPedidos(): Pedido[] {
   const stored = localStorage.getItem(STORAGE_KEY)
 
@@ -19,23 +15,14 @@ export function getPedidos(): Pedido[] {
   }
 }
 
-/**
- * Salva a lista de pedidos no localStorage
- */
 function savePedidos(pedidos: Pedido[]): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(pedidos))
 }
 
-/**
- * Calcula o total do pedido baseado nos items
- */
 function calculateTotal(items: PedidoInputData['items']): number {
   return items.reduce((acc, item) => acc + item.subtotal, 0)
 }
 
-/**
- * Cria um novo pedido
- */
 export function createPedido(data: PedidoInputData): Pedido {
   const pedidos = getPedidos()
 
@@ -55,9 +42,6 @@ export function createPedido(data: PedidoInputData): Pedido {
   return newPedido
 }
 
-/**
- * Atualiza um pedido existente
- */
 export function updatePedido(id: string, data: PedidoInputData): Pedido | null {
   const pedidos = getPedidos()
   const index = pedidos.findIndex(pedido => pedido.id === id)
@@ -86,10 +70,6 @@ export function updatePedido(id: string, data: PedidoInputData): Pedido | null {
   return pedidos[index]
 }
 
-/**
- * Busca um pedido por ID
- * @param {string} id
- */
 export function getPedidoById(id: string): Pedido | null {
   const pedidos = getPedidos()
   return pedidos.find(data => data.id === id) || null

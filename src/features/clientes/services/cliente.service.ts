@@ -1,11 +1,7 @@
 import { type Cliente, type ClienteInputData } from '@/features/clientes/schemas/cliente.schema'
 
-// A chave do localStorage é uma constante privada deste módulo.
 const STORAGE_KEY: string = 'myapp_brazil_japan_clientes'
 
-/**
- * Retorna a lista de clientes do localStorage
- */
 export function getClientes(): Cliente[] {
   const stored = localStorage.getItem(STORAGE_KEY)
 
@@ -19,16 +15,10 @@ export function getClientes(): Cliente[] {
   }
 }
 
-/**
- * Salva a lista de clientes no localStorage
- */
 function saveClientes(clientes: Cliente[]): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(clientes))
 }
 
-/**
- * Cria um novo cliente
- */
 export function createCliente(data: ClienteInputData): Cliente {
   const clientes = getClientes()
 
@@ -48,9 +38,6 @@ export function createCliente(data: ClienteInputData): Cliente {
   return newCliente
 }
 
-/**
- * Atualiza um cliente existente
- */
 export function updateCliente(id: string, data: ClienteInputData): Cliente | null {
   const clientes = getClientes()
   const index = clientes.findIndex(cliente => cliente.id === id)
@@ -79,10 +66,6 @@ export function updateCliente(id: string, data: ClienteInputData): Cliente | nul
   return clientes[index]
 }
 
-/**
- * Busca um cliente por ID
- * @param {string} id
- */
 export function getClienteById(id: string): Cliente | null {
   const clientes = getClientes()
   return clientes.find(data => data.id === id) || null

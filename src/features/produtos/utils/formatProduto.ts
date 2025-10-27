@@ -2,9 +2,6 @@ import { type Produto } from '@/features/produtos/schemas/produto.schema'
 
 import { PRODUTO_STATUS, type ProdutoStatus } from '@/features/produtos/constants/status'
 
-/**
- * Formata o nome do produto (ex.: remove espaços extras e capitaliza cada palavra)
- */
 export function formatProdutoName(nome: string): string {
   if (!nome) return ''
 
@@ -15,9 +12,6 @@ export function formatProdutoName(nome: string): string {
     .join(' ')
 }
 
-/**
- * Formata o preço para exibição (R$ 0,00)
- */
 export function formatProdutoPreco(preco: number): string {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -25,9 +19,6 @@ export function formatProdutoPreco(preco: number): string {
   }).format(preco)
 }
 
-/**
- * Converte o status para um label legível
- */
 export function formatProdutoStatus(status: ProdutoStatus): string {
   switch (status) {
     case PRODUTO_STATUS.DISPONIVEL:
@@ -41,19 +32,12 @@ export function formatProdutoStatus(status: ProdutoStatus): string {
   }
 }
 
-/**
- * Define a "forma" de um produto após ele ser formatado para exibição.
- * estende o 'Produto' original e adiciona as novas propriedades.
- */
 export interface FormattedProduto extends Produto {
   statusLabel: string
   precoFormatted: string
   createdAtFormatted: string
 }
 
-/**
- * Formata datas para exibição (dd/mm/yyyy)
- */
 export function formatProdutoDate(isoDate: string): string {
   if (!isoDate) return 'Data indisponível'
 
@@ -71,9 +55,6 @@ export function formatProdutoDate(isoDate: string): string {
   }
 }
 
-/**
- * Formata uma lista de produtos para exibição
- */
 export function formatProdutoList(produtos: Produto[]): FormattedProduto[] {
   if (!produtos || produtos.length === 0) return []
 

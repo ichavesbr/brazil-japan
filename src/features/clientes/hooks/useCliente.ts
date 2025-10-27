@@ -19,7 +19,6 @@ export function useCliente() {
     setClientes(formatClienteList(getClientes()))
   }, [])
 
-  // --- Função 'addCliente' ---
   const addCliente = useCallback((data: ClienteInputData): void => {
     const newCliente = createCliente(data)
     const formattedCliente = formatClienteList([newCliente])[0]
@@ -28,7 +27,6 @@ export function useCliente() {
     }
   }, [])
 
-  // --- Função 'editCliente' ---
   const editCliente = useCallback((id: string, data: ClienteInputData): void => {
     const updatedCliente = updateCliente(id, data)
     if (updatedCliente) {
@@ -41,7 +39,6 @@ export function useCliente() {
     }
   }, [])
 
-  // --- Função 'getCliente' ---
   const getCliente = useCallback((id: string) => {
     return getClienteById(id)
   }, [])

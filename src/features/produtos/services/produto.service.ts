@@ -1,11 +1,7 @@
 import { type Produto, type ProdutoInputData } from '@/features/produtos/schemas/produto.schema'
 
-// A chave do localStorage é uma constante privada deste módulo.
 const STORAGE_KEY: string = 'myapp_brazil_japan_produtos'
 
-/**
- * Retorna a lista de produtos do localStorage
- */
 export function getProdutos(): Produto[] {
   const stored = localStorage.getItem(STORAGE_KEY)
 
@@ -19,16 +15,10 @@ export function getProdutos(): Produto[] {
   }
 }
 
-/**
- * Salva a lista de produtos no localStorage
- */
 function saveProdutos(produtos: Produto[]): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(produtos))
 }
 
-/**
- * Cria um novo produto
- */
 export function createProduto(data: ProdutoInputData): Produto {
   const produtos = getProdutos()
 
@@ -48,9 +38,6 @@ export function createProduto(data: ProdutoInputData): Produto {
   return newProduto
 }
 
-/**
- * Atualiza um produto existente
- */
 export function updateProduto(id: string, data: ProdutoInputData): Produto | null {
   const produtos = getProdutos()
   const index = produtos.findIndex(produto => produto.id === id)
@@ -79,10 +66,6 @@ export function updateProduto(id: string, data: ProdutoInputData): Produto | nul
   return produtos[index]
 }
 
-/**
- * Busca um produto por ID
- * @param {string} id
- */
 export function getProdutoById(id: string): Produto | null {
   const produtos = getProdutos()
   return produtos.find(data => data.id === id) || null

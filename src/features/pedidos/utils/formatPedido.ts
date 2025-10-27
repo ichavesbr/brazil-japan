@@ -2,9 +2,6 @@ import { type Pedido } from '@/features/pedidos/schemas/pedido.schema'
 
 import { PEDIDO_STATUS, type PedidoStatus } from '@/features/pedidos/constants/status'
 
-/**
- * Formata o valor monetário para exibição (R$ 0,00)
- */
 export function formatPedidoTotal(total: number): string {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -12,9 +9,6 @@ export function formatPedidoTotal(total: number): string {
   }).format(total)
 }
 
-/**
- * Converte o status para um label legível
- */
 export function formatPedidoStatus(status: PedidoStatus): string {
   switch (status) {
     case PEDIDO_STATUS.PENDENTE:
@@ -32,10 +26,6 @@ export function formatPedidoStatus(status: PedidoStatus): string {
   }
 }
 
-/**
- * Define a "forma" de um pedido após ele ser formatado para exibição.
- * estende o 'Pedido' original e adiciona as novas propriedades.
- */
 export interface FormattedPedido extends Pedido {
   statusLabel: string
   totalFormatted: string
@@ -43,9 +33,6 @@ export interface FormattedPedido extends Pedido {
   itemsCount: number
 }
 
-/**
- * Formata datas para exibição (dd/mm/yyyy)
- */
 export function formatPedidoDate(isoDate: string): string {
   if (!isoDate) return 'Data indisponível'
 
@@ -63,9 +50,6 @@ export function formatPedidoDate(isoDate: string): string {
   }
 }
 
-/**
- * Formata uma lista de pedidos para exibição
- */
 export function formatPedidoList(pedidos: Pedido[]): FormattedPedido[] {
   if (!pedidos || pedidos.length === 0) return []
 
