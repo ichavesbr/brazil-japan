@@ -8,9 +8,6 @@ import { H1 } from '@/components/ui/typography'
 import { Button } from '@/components/ui/button'
 import { type FormattedProduto } from '@/features/produtos/utils/formatProduto'
 
-/**
- * View para a lista de produtos.
- */
 export function ProdutoListView() {
   const router = useRouter()
   const { produtos } = useProduto()

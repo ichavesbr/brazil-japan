@@ -8,9 +8,6 @@ import { H1 } from '@/components/ui/typography'
 import { Button } from '@/components/ui/button'
 import { type FormattedPedido } from '@/features/pedidos/utils/formatPedido'
 
-/**
- * View para a lista de pedidos.
- */
 export function PedidoListView() {
   const router = useRouter()
   const { pedidos } = usePedido()

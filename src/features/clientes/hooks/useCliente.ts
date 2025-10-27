@@ -12,9 +12,6 @@ import { formatClienteList, type FormattedCliente } from '@/features/clientes/ut
 
 import { type Cliente, type ClienteInputData } from '@/features/clientes/schemas/cliente.schema'
 
-/**
- * Hook para gerenciar clientes na SPA
- */
 export function useCliente() {
   const [clientes, setClientes] = useState<FormattedCliente[]>([])
 

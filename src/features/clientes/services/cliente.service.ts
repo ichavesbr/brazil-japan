@@ -1,5 +1,3 @@
-// (A LÓGICA DE NEGÓCIO)
-
 import { type Cliente, type ClienteInputData } from '@/features/clientes/schemas/cliente.schema'
 
 // A chave do localStorage é uma constante privada deste módulo.

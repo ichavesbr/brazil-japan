@@ -12,9 +12,6 @@ import { formatPedidoList, type FormattedPedido } from '@/features/pedidos/utils
 
 import { type Pedido, type PedidoInputData } from '@/features/pedidos/schemas/pedido.schema'
 
-/**
- * Hook para gerenciar pedidos na SPA
- */
 export function usePedido() {
   const [pedidos, setPedidos] = useState<FormattedPedido[]>([])
 

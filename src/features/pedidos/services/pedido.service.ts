@@ -1,5 +1,3 @@
-// (A LÓGICA DE NEGÓCIO)
-
 import { type Pedido, type PedidoInputData } from '@/features/pedidos/schemas/pedido.schema'
 
 // A chave do localStorage é uma constante privada deste módulo.

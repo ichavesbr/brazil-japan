@@ -12,9 +12,6 @@ import { formatProdutoList, type FormattedProduto } from '@/features/produtos/ut
 
 import { type Produto, type ProdutoInputData } from '@/features/produtos/schemas/produto.schema'
 
-/**
- * Hook para gerenciar produtos na SPA
- */
 export function useProduto() {
   const [produtos, setProdutos] = useState<FormattedProduto[]>([])
 

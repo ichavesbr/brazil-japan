@@ -1,5 +1,3 @@
-// (A LÓGICA DE NEGÓCIO)
-
 import { type Produto, type ProdutoInputData } from '@/features/produtos/schemas/produto.schema'
 
 // A chave do localStorage é uma constante privada deste módulo.

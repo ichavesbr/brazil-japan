@@ -8,11 +8,6 @@ import { H1 } from '@/components/ui/typography'
 import { Button } from '@/components/ui/button'
 import { type FormattedCliente } from '@/features/clientes/utils/formatCliente'
 
-/**
- * View para a lista de clientes.
- * Responsabilidade: Exibir a lista, o cabeçalho,
- * e lidar com as ações de navegar para 'criar' ou 'editar'.
- */
 export function ClienteListView() {
   const router = useRouter()
   const { clientes } = useCliente()

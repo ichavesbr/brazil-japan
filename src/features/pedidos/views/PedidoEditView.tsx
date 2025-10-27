@@ -3,9 +3,6 @@
 import { H1, P } from '@/components/ui/typography'
 import { PedidoForm } from '@/features/pedidos/components/PedidoForm'
 
-/**
- * View para editar um pedido existente
- */
 export function PedidoEditView() {
   return (
     <div className="space-y-6">

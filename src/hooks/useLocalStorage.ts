@@ -1,23 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
 import { storage } from '@/lib/storage'
 
-/**
- * React hook for managing state synchronized with localStorage
- * Provides reactive updates when the value changes
- *
- * @param key - The localStorage key to use
- * @param initialValue - The initial value if key doesn't exist
- * @returns A stateful value and a setter function (like useState)
- *
- * @example
- * const [user, setUser] = useLocalStorage<User>('user', null)
- * setUser({ id: 1, name: 'John' })
- */
 export function useLocalStorage<T>(
   key: string,
   initialValue: T
 ): [T, (value: T | ((prev: T) => T)) => void] {
-  // Initialize state from localStorage or use initialValue
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = storage.get<T>(key)
@@ -28,7 +15,6 @@ export function useLocalStorage<T>(
     }
   })
 
-  // Update localStorage when state changes
   useEffect(() => {
     try {
       storage.set(key, storedValue)
@@ -37,7 +23,6 @@ export function useLocalStorage<T>(
     }
   }, [key, storedValue])
 
-  // Wrap setter to support functional updates
   const setValue = useCallback(
     (value: T | ((prev: T) => T)) => {
       try {

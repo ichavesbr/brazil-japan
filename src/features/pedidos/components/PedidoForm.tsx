@@ -3,10 +3,6 @@
 import { Button } from '@/components/ui/button'
 import { P } from '@/components/ui/typography'
 
-/**
- * Componente de formulário skeleton para pedidos
- * TODO: Implementar formulário completo com validação
- */
 export function PedidoForm() {
   return (
     <div className="space-y-4">
