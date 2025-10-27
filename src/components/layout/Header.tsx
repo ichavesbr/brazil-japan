@@ -6,11 +6,11 @@ import Menu from "./Menu"
 import Cart from "./Cart"
 
 const links = [
-  { name: "Acessórios", href: "/" },
-  { name: "Bermudas & Shorts", href: "/" },
-  { name: "Blusas & Moletons", href: "/" },
-  { name: "Calças", href: "/" },
-  { name: "Camisetas", href: "/" },
+  { name: "Início", href: "/" },
+  { name: "Produtos", href: "/produtos" },
+  { name: "Clientes", href: "/clientes" },
+  { name: "Pedidos", href: "/pedidos" },
+  { name: "Empresas", href: "/company/list" },
 ]
 
 const Header = () =>  {
@@ -18,7 +18,11 @@ const Header = () =>  {
     <header className="sticky top-0 z-50 w-full border-b border-zinc-300 bg-[#e8e4dc]">
       <div className="flex items-center gap-3 px-4 py-3 md:px-12 lg:px-20 md:justify-between">
         <div className="flex-shrink-0">
-          <h1 className="text-2xl font-bold tracking-tight text-zinc-900">Company</h1>
+          <Link href="/">
+            <h1 className="text-2xl font-bold tracking-tight text-zinc-900 cursor-pointer hover:text-zinc-700 transition-colors">
+              Brazil Japan
+            </h1>
+          </Link>
         </div>
         <div className="flex-1 md:flex-none md:w-full md:max-w-md md:mx-auto relative">
           <Input
