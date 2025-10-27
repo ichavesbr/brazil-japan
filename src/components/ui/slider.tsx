@@ -30,9 +30,9 @@ function Slider({
         'relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
         className
       )}
-      {...props} // Passa o resto (ex: onValueChange, disabled, etc.)
-      {...controlledProps} // Passa 'value' SÓ se ele existir
-      {...uncontrolledProps} // Passa 'defaultValue' SÓ se ele existir
+      {...props}
+      {...controlledProps}
+      {...uncontrolledProps}
     >
       <SliderPrimitive.Track
         data-slot="slider-track"

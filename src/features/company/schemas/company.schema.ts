@@ -1,5 +1,3 @@
-// ESTE ARQUIVO SÓ CONTÉM DEFINIÇÕES DE TIPO.
-
 import { type CompanyStatus } from '@/features/company/constants/status'
 
 /**

@@ -1,8 +1,5 @@
-// (A LÓGICA DE NEGÓCIO)
-
 import { type Company, type CompanyInputData } from '@/features/company/schemas/company.schema'
 
-// A chave do localStorage é uma constante privada deste módulo.
 const STORAGE_KEY: string = 'myapp_brazil_japan_companies'
 
 /**

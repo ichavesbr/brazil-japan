@@ -22,7 +22,6 @@ export function useCompany() {
     setCompanies(formatCompanyList(getCompanies()))
   }, [])
 
-  // --- Função 'addCompany' ---
   const addCompany = useCallback((data: CompanyInputData): void => {
     const newCompany = createCompany(data)
     const formattedCompany = formatCompanyList([newCompany])[0]
@@ -31,7 +30,6 @@ export function useCompany() {
     }
   }, [])
 
-  // --- Função 'editCompany' ---
   const editCompany = useCallback((id: string, data: CompanyInputData): void => {
     const updatedCompany = updateCompany(id, data)
     if (updatedCompany) {
@@ -44,11 +42,9 @@ export function useCompany() {
     }
   }, [])
 
-  // --- A FUNÇÃO PROBLEMÁTICA ---
   const getCompany = useCallback((id: string) => {
-    // A lógica é a mesma, mas agora está "memoizada"
     return getCompanyById(id)
-  }, []) // Vazio também, pois 'getCompanyById' é um import estático
+  }, [])
 
   return {
     companies,
