@@ -1,9 +1,12 @@
+import Link from "next/link"
+
 const Footer = () => {
     const date = new Date()
     const currentYear = date.getFullYear()
     
     return (
       <div className="bg-[#e8e4dc] w-full gap-1 p-8 fixed bottom-0">
+        <Link href="/partners" className="hover:underline block mb-3 text-sm">Empresas parceiras</Link>
         <p className="text-xs font-medium">© {currentYear} Copyright Company</p>
         <p className="text-muted-foreground text-xs font-medium">
         Todos os direitos reservados.
