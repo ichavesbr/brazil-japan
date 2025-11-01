@@ -4,21 +4,16 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import Menu from "./Menu"
 import Cart from "./Cart"
-
-const links = [
-  { name: "Acessórios", href: "/" },
-  { name: "Bermudas & Shorts", href: "/" },
-  { name: "Blusas & Moletons", href: "/" },
-  { name: "Calças", href: "/" },
-  { name: "Camisetas", href: "/" },
-]
+import { categories } from "@/features/products/constants/productsCategories";
 
 const Header = () =>  {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-300 bg-[#e8e4dc]">
       <div className="flex items-center gap-3 px-4 py-3 md:px-12 lg:px-20 md:justify-between">
         <div className="flex-shrink-0">
-          <h1 className="text-2xl font-bold tracking-tight text-zinc-900">Company</h1>
+          <Link href="/">
+            <h1 className="text-2xl font-bold tracking-tight text-zinc-900">Company</h1>
+          </Link>
         </div>
         <div className="flex-1 md:flex-none md:w-full md:max-w-md md:mx-auto relative">
           <Input
@@ -44,13 +39,13 @@ const Header = () =>  {
 
       <div className="hidden md:block border-t border-zinc-300 bg-[#e8e4dc] px-4 py-2 md:px-12 lg:px-20 overflow-x-auto">
         <nav className="flex justify-center gap-6 whitespace-nowrap">
-          {links.map(link => (
-            <Link  
-              key={link.name}
-              href={link.href} 
+          {categories.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/products/category/${category.slug}`}
               className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors font-medium"
             >
-              {link.name}
+              {category.name}
             </Link>
           ))}
         </nav>
