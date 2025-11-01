@@ -32,6 +32,7 @@ PRODUCTS
   - /products/list/page.tsx     (para exibição de todos os produtos);
 
 - Criada a feature /products com:
+  - /mocks/mockProducts.ts     (dados iniciais para serem adicionados em localStore, para teste)
   - /components/ProductCard.tsx 
   - /components/ProductForm.tsx     (para uso na criação e edição de produtos),
   - /constants/productsCategories.ts     (para associar nome da tag com o slug apropriado. Estes serão usados para o nome da sessão correspondente e para a rota, permitindo um controle mais fácil e correto);
