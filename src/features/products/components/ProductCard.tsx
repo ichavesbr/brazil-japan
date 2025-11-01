@@ -39,6 +39,7 @@ export function ProductCard({ product }: Props) {
           width={150}
           height={150}
           className="object-cover rounded"
+          priority
         />
         <p className="mt-2 text-lg font-bold">
           {`R$ ${product.price.toFixed(2)}`}
