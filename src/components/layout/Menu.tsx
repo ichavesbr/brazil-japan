@@ -1,24 +1,30 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { LogInIcon, LogOutIcon, MenuIcon } from "lucide-react";
-import Link from "next/link";
-import { useAuth } from "@/context/AuthContext";
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { LogInIcon, LogOutIcon, MenuIcon } from "lucide-react"
+import Link from "next/link"
+import { useAuth } from "@/context/AuthContext"
 
 const Menu = () => {
-  const { client, login, logout } = useAuth();
-  const [open, setOpen] = useState(false);
+  const { client, login, logout } = useAuth()
+  const [open, setOpen] = useState(false)
 
   const handleLogin = () => {
-    login();
-    setOpen(false); // fecha o menu após login
-  };
+    login()
+    setOpen(false) // fecha o menu após login
+  }
 
   const handleLogout = () => {
-    logout();
-    setOpen(false);
+    logout()
+    setOpen(false)
   }
 
   const links = client
@@ -27,7 +33,7 @@ const Menu = () => {
         { label: "Meus Pedidos", href: "/orders/list" },
         { label: "Meu Perfil", href: "/client" },
       ]
-    : [{ label: "Produtos", href: "/products/list" }];
+    : [{ label: "Produtos", href: "/products/list" }]
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -42,7 +48,10 @@ const Menu = () => {
         </Button>
       </SheetTrigger>
 
-      <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-[#e8e4dc] border-zinc-300">
+      <SheetContent
+        side="right"
+        className="w-[300px] sm:w-[400px] bg-[#e8e4dc] border-zinc-300"
+      >
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
@@ -56,14 +65,24 @@ const Menu = () => {
               size="icon"
               variant="outline"
               className="h-10 w-10 flex items-center justify-center"
-              onClick={client ? () => { handleLogout() } : handleLogin}
+              onClick={
+                client
+                  ? () => {
+                      handleLogout()
+                    }
+                  : handleLogin
+              }
             >
-              {client ? <LogOutIcon className="h-5 w-5" /> : <LogInIcon className="h-5 w-5" />}
+              {client ? (
+                <LogOutIcon className="h-5 w-5" />
+              ) : (
+                <LogInIcon className="h-5 w-5" />
+              )}
             </Button>
           </div>
 
           <ul className="space-y-2">
-            {links.map((link) => (
+            {links.map(link => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -78,7 +97,7 @@ const Menu = () => {
         </div>
       </SheetContent>
     </Sheet>
-  );
-};
+  )
+}
 
 export default Menu

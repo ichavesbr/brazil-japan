@@ -1,5 +1,5 @@
-import ClientView from "@/features/client/views/ClientView";
+import ClientView from "@/features/client/views/ClientView"
 
 export default function ClientPage() {
-  return <ClientView /> 
+  return <ClientView />
 }

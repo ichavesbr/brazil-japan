@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import * as SliderPrimitive from "@radix-ui/react-slider";
+import * as React from "react"
+import * as SliderPrimitive from "@radix-ui/react-slider"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 function Slider({
   className,
@@ -16,10 +16,10 @@ function Slider({
   const displayValues = React.useMemo(
     () => value ?? defaultValue ?? [min],
     [value, defaultValue, min]
-  );
+  )
 
-  const controlledProps = value !== undefined ? { value } : {};
-  const uncontrolledProps = defaultValue !== undefined ? { defaultValue } : {};
+  const controlledProps = value !== undefined ? { value } : {}
+  const uncontrolledProps = defaultValue !== undefined ? { defaultValue } : {}
 
   return (
     <SliderPrimitive.Root
@@ -55,7 +55,7 @@ function Slider({
         />
       ))}
     </SliderPrimitive.Root>
-  );
+  )
 }
 
-export { Slider };
+export { Slider }

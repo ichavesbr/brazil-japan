@@ -1,21 +1,21 @@
-import { type Company } from "@/features/company/schemas/company.schema";
+import { type Company } from "@/features/company/schemas/company.schema"
 
 import {
   COMPANY_STATUS,
   type CompanyStatus,
-} from "@/features/company/constants/status";
+} from "@/features/company/constants/status"
 
 /**
  * Formata o nome da empresa (ex.: remove espaços extras e capitaliza cada palavra)
  */
 export function formatCompanyName(name: string): string {
-  if (!name) return "";
+  if (!name) return ""
 
   return name
     .trim()
     .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(" ");
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ")
 }
 
 /**
@@ -24,13 +24,13 @@ export function formatCompanyName(name: string): string {
 export function formatCompanyStatus(status: CompanyStatus): string {
   switch (status) {
     case COMPANY_STATUS.ACTIVE:
-      return "Ativa";
+      return "Ativa"
     case COMPANY_STATUS.INACTIVE:
-      return "Inativa";
+      return "Inativa"
     case COMPANY_STATUS.PENDING:
-      return "Pendente";
+      return "Pendente"
     default:
-      return "Desconhecido";
+      return "Desconhecido"
   }
 }
 
@@ -39,27 +39,27 @@ export function formatCompanyStatus(status: CompanyStatus): string {
  * estende a 'Company' original e adiciona as novas propriedades.
  */
 export interface FormattedCompany extends Company {
-  statusLabel: string;
-  createdAtFormatted: string;
+  statusLabel: string
+  createdAtFormatted: string
 }
 
 /**
  * Formata datas para exibição (dd/mm/yyyy)
  */
 export function formatCompanyDate(isoDate: string): string {
-  if (!isoDate) return "Data indisponível";
+  if (!isoDate) return "Data indisponível"
 
   try {
-    const date = new Date(isoDate);
+    const date = new Date(isoDate)
 
     if (isNaN(date.getTime())) {
-      return "Data inválida";
+      return "Data inválida"
     }
 
-    return date.toLocaleDateString("pt-BR");
+    return date.toLocaleDateString("pt-BR")
   } catch (error) {
-    console.error("Erro ao formatar data:", error);
-    return "Data inválida";
+    console.error("Erro ao formatar data:", error)
+    return "Data inválida"
   }
 }
 
@@ -67,12 +67,12 @@ export function formatCompanyDate(isoDate: string): string {
  * Formata uma lista de empresas para exibição
  */
 export function formatCompanyList(companies: Company[]): FormattedCompany[] {
-  if (!companies || companies.length === 0) return [];
+  if (!companies || companies.length === 0) return []
 
-  return companies.map((company) => ({
+  return companies.map(company => ({
     ...company,
     name: formatCompanyName(company.name),
     statusLabel: formatCompanyStatus(company.status),
     createdAtFormatted: formatCompanyDate(company.createdAt),
-  }));
+  }))
 }

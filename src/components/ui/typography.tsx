@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 const HDisplay = React.forwardRef<
   HTMLHeadingElement,
@@ -17,9 +17,9 @@ const HDisplay = React.forwardRef<
     >
       {children}
     </h1>
-  );
-});
-HDisplay.displayName = "HDisplay";
+  )
+})
+HDisplay.displayName = "HDisplay"
 
 const H1 = React.forwardRef<
   HTMLHeadingElement,
@@ -36,9 +36,9 @@ const H1 = React.forwardRef<
     >
       {children}
     </h1>
-  );
-});
-H1.displayName = "H1";
+  )
+})
+H1.displayName = "H1"
 
 const H2 = React.forwardRef<
   HTMLHeadingElement,
@@ -55,9 +55,9 @@ const H2 = React.forwardRef<
     >
       {children}
     </h2>
-  );
-});
-H2.displayName = "H2";
+  )
+})
+H2.displayName = "H2"
 
 const H3 = React.forwardRef<
   HTMLHeadingElement,
@@ -74,9 +74,9 @@ const H3 = React.forwardRef<
     >
       {children}
     </h3>
-  );
-});
-H3.displayName = "H3";
+  )
+})
+H3.displayName = "H3"
 
 const H4 = React.forwardRef<
   HTMLHeadingElement,
@@ -93,9 +93,9 @@ const H4 = React.forwardRef<
     >
       {children}
     </h4>
-  );
-});
-H4.displayName = "H4";
+  )
+})
+H4.displayName = "H4"
 
 const H5 = React.forwardRef<
   HTMLHeadingElement,
@@ -112,9 +112,9 @@ const H5 = React.forwardRef<
     >
       {children}
     </h5>
-  );
-});
-H5.displayName = "H5";
+  )
+})
+H5.displayName = "H5"
 
 const H6 = React.forwardRef<
   HTMLHeadingElement,
@@ -131,9 +131,9 @@ const H6 = React.forwardRef<
     >
       {children}
     </h6>
-  );
-});
-H6.displayName = "H6";
+  )
+})
+H6.displayName = "H6"
 
 const P = React.forwardRef<
   HTMLParagraphElement,
@@ -147,9 +147,9 @@ const P = React.forwardRef<
     >
       {children}
     </p>
-  );
-});
-P.displayName = "P";
+  )
+})
+P.displayName = "P"
 
 const PSmall = React.forwardRef<
   HTMLParagraphElement,
@@ -163,9 +163,9 @@ const PSmall = React.forwardRef<
     >
       {children}
     </p>
-  );
-});
-PSmall.displayName = "PSmaill";
+  )
+})
+PSmall.displayName = "PSmaill"
 
 const PTiny = React.forwardRef<
   HTMLParagraphElement,
@@ -179,9 +179,9 @@ const PTiny = React.forwardRef<
     >
       {children}
     </p>
-  );
-});
-PTiny.displayName = "PTiny";
+  )
+})
+PTiny.displayName = "PTiny"
 
 const Blockquote = React.forwardRef<
   HTMLQuoteElement,
@@ -195,8 +195,8 @@ const Blockquote = React.forwardRef<
     >
       {children}
     </blockquote>
-  );
-});
-Blockquote.displayName = "Blockquote";
+  )
+})
+Blockquote.displayName = "Blockquote"
 
-export { HDisplay, H1, H2, H3, H4, H5, H6, P, PSmall, PTiny, Blockquote };
+export { HDisplay, H1, H2, H3, H4, H5, H6, P, PSmall, PTiny, Blockquote }

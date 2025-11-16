@@ -1,4 +1,4 @@
-import {type Product } from "../schemas/products.schema";
+import { type Product } from "../schemas/products.schema"
 
 export const mockProducts: Product[] = [
   {
@@ -12,7 +12,7 @@ export const mockProducts: Product[] = [
     createdAt: new Date().toISOString(),
     isFeatured: true,
     isPromotion: false,
-    isFavorite: false
+    isFavorite: false,
   },
   {
     id: "29b46b6c-ea8a-44cb-b90a-13204e67354b",
@@ -25,7 +25,7 @@ export const mockProducts: Product[] = [
     createdAt: new Date().toISOString(),
     isFeatured: false,
     isPromotion: false,
-    isFavorite: false
+    isFavorite: false,
   },
   {
     id: "732f2e2e-45c7-44cf-a7b9-184efc631fdb",
@@ -38,6 +38,6 @@ export const mockProducts: Product[] = [
     isFeatured: true,
     createdAt: new Date().toISOString(),
     isPromotion: false,
-    isFavorite: false 
+    isFavorite: false,
   },
 ]

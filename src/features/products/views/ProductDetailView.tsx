@@ -1,34 +1,32 @@
-"use client";
+"use client"
 
-import { useParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useProducts } from "../hooks/useProducts";
-import { type Product } from "../schemas/products.schema";
-import { Button } from "@/components/ui/button";
+import { useParams, useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+import { useProducts } from "../hooks/useProducts"
+import { type Product } from "../schemas/products.schema"
+import { Button } from "@/components/ui/button"
 
 export default function ProductDetailView() {
-  const { id } = useParams<{ id: string }>();
-  const router = useRouter();
-  const { getProduct, isLoading } = useProducts();
-  const [product, setProduct] = useState<Product | null>(null);
+  const { id } = useParams<{ id: string }>()
+  const router = useRouter()
+  const { getProduct, isLoading } = useProducts()
+  const [product, setProduct] = useState<Product | null>(null)
 
   useEffect(() => {
     if (!id || isLoading) {
       return
-    };
+    }
 
-    const prod = getProduct(id);
+    const prod = getProduct(id)
     if (prod) {
       setProduct(prod)
-
     } else {
       router.push("/products/list")
-    };
-
-  }, [id, getProduct, isLoading, router]);
+    }
+  }, [id, getProduct, isLoading, router])
 
   if (isLoading || !product) {
-    return <p className="p-6 text-gray-600">Carregando...</p>;
+    return <p className="p-6 text-gray-600">Carregando...</p>
   }
 
   return (

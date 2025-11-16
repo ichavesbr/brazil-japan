@@ -1,5 +1,5 @@
-import { ProductsListView } from "@/features/products/views/ProductsListView";
+import { ProductsListView } from "@/features/products/views/ProductsListView"
 
 export default function ProductsListPage() {
-  return <ProductsListView  />
+  return <ProductsListView />
 }

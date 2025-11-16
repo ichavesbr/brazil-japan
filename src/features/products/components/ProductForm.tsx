@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { useState, type ChangeEvent, type FormEvent } from "react";
-import { type Product } from "@/features/products/schemas/products.schema";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+import { useState, type ChangeEvent, type FormEvent } from "react"
+import { type Product } from "@/features/products/schemas/products.schema"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
 
 interface Props {
-  product?: Product;
-  onSubmit: (data: Product) => void;
-  onCancel: () => void;
+  product?: Product
+  onSubmit: (data: Product) => void
+  onCancel: () => void
 }
 
 export default function ProductForm({ product, onSubmit, onCancel }: Props) {
@@ -28,63 +28,60 @@ export default function ProductForm({ product, onSubmit, onCancel }: Props) {
       isPromotion: false,
       isFavorite: false,
     }
-  );
+  )
 
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Record<string, string>>({})
 
   const validate = () => {
-    const newErrors: Record<string, string> = {};
+    const newErrors: Record<string, string> = {}
     if (!formData.name.trim()) {
       newErrors.name = "Nome é obrigatório."
-    };
+    }
     if (!(formData.description ?? "").trim()) {
       newErrors.description = "Descrição é obrigatória."
-    };
+    }
     if (!(formData.category ?? "").trim()) {
       newErrors.category = "Categoria é obrigatória."
-    };
+    }
     if (!(formData.imageUrl ?? "").trim()) {
       newErrors.image = "Imagem é obrigatória."
-    };
+    }
     if (!formData.price || formData.price <= 0) {
       newErrors.price = "Preço deve ser maior que zero."
-    };
+    }
 
     return newErrors
-  };
+  }
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({
+    const { name, value } = event.target
+    setFormData(prev => ({
       ...prev,
-      [name]:
-        name === "price" || name === "stock"
-          ? Number(value)
-          : value,
-    }));
-  };
+      [name]: name === "price" || name === "stock" ? Number(value) : value,
+    }))
+  }
 
   const handleSwitchChange = (name: keyof Product, checked: boolean) => {
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       [name]: checked,
-    }));
-  };
+    }))
+  }
 
   const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    const validationErrors = validate();
+    const validationErrors = validate()
     if (Object.keys(validationErrors).length) {
-      setErrors(validationErrors);
-      return;
+      setErrors(validationErrors)
+      return
     }
 
-    setErrors({});
-    onSubmit(formData);
-  };
+    setErrors({})
+    onSubmit(formData)
+  }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md">
@@ -151,9 +148,7 @@ export default function ProductForm({ product, onSubmit, onCancel }: Props) {
           onChange={handleChange}
           required
         />
-        {errors.price && (
-          <p className="text-sm text-red-500">{errors.price}</p>
-        )}
+        {errors.price && <p className="text-sm text-red-500">{errors.price}</p>}
       </div>
 
       <div>
@@ -167,9 +162,7 @@ export default function ProductForm({ product, onSubmit, onCancel }: Props) {
           min={0}
           required
         />
-        {errors.stock && (
-          <p className="text-sm text-red-500">{errors.stock}</p>
-        )}
+        {errors.stock && <p className="text-sm text-red-500">{errors.stock}</p>}
       </div>
 
       <div className="space-y-4 border-t border-gray-200 pt-4">
@@ -185,7 +178,7 @@ export default function ProductForm({ product, onSubmit, onCancel }: Props) {
             <Switch
               id="isFeatured"
               checked={formData.isFeatured}
-              onCheckedChange={(checked) =>
+              onCheckedChange={checked =>
                 handleSwitchChange("isFeatured", checked)
               }
             />
@@ -198,7 +191,7 @@ export default function ProductForm({ product, onSubmit, onCancel }: Props) {
             <Switch
               id="isPromotion"
               checked={formData.isPromotion}
-              onCheckedChange={(checked) =>
+              onCheckedChange={checked =>
                 handleSwitchChange("isPromotion", checked)
               }
             />
@@ -211,7 +204,7 @@ export default function ProductForm({ product, onSubmit, onCancel }: Props) {
             <Switch
               id="isFavorite"
               checked={formData.isFavorite}
-              onCheckedChange={(checked) =>
+              onCheckedChange={checked =>
                 handleSwitchChange("isFavorite", checked)
               }
             />

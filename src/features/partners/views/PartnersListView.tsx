@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { usePartners } from "@/features/partners/hooks/usePartners";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { H1, P } from "@/components/ui/typography";
-import { Skeleton } from "@/components/ui/skeleton";
+import { usePartners } from "@/features/partners/hooks/usePartners"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { H1, P } from "@/components/ui/typography"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function PartnersListView() {
-  const partners = usePartners();
-  const isLoading = !partners; 
+  const partners = usePartners()
+  const isLoading = !partners
 
   return (
     <main className="container mx-auto py-10">
@@ -25,10 +25,15 @@ export default function PartnersListView() {
         </div>
       ) : partners.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {partners.map((company) => (
-            <Card key={company.id} className="text-center hover:shadow-md transition-shadow">
+          {partners.map(company => (
+            <Card
+              key={company.id}
+              className="text-center hover:shadow-md transition-shadow"
+            >
               <CardHeader>
-                <CardTitle className="text-base font-semibold">{company.name}</CardTitle>
+                <CardTitle className="text-base font-semibold">
+                  {company.name}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 {/* adicionar logo, descrição, etc no futuro */}
@@ -42,5 +47,5 @@ export default function PartnersListView() {
         </div>
       )}
     </main>
-  );
+  )
 }

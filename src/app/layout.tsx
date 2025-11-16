@@ -1,18 +1,15 @@
 import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
-import "./globals.css";
+import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
-import Menu from "@/components/layout/Header";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Menu from "@/components/layout/Header"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
-  weight: [ 
-    "400", 
-    "700", 
-  ]
+  weight: ["400", "700"],
 })
 
 export const metadata: Metadata = {
@@ -30,9 +27,7 @@ export default function RootLayout({
       <body className={`${roboto.variable} antialiased`}>
         <AuthProvider>
           <Header />
-          <main className="pb-32">
-            {children}
-          </main>
+          <main className="pb-32">{children}</main>
         </AuthProvider>
         <Footer />
       </body>

@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import {
   COMPANY_STATUS,
   type CompanyStatus,
-} from "@/features/company/constants/status";
+} from "@/features/company/constants/status"
 import {
   type CompanyInputData,
   type Company,
-} from "@/features/company/schemas/company.schema";
+} from "@/features/company/schemas/company.schema"
 
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,
@@ -20,14 +20,14 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui/select"
+import { Button } from "@/components/ui/button"
 
 interface CompanyFormProps {
-  defaultValues?: Company | CompanyInputData | null;
+  defaultValues?: Company | CompanyInputData | null
 
-  onSubmit: (data: CompanyInputData) => void;
-  onCancel: () => void;
+  onSubmit: (data: CompanyInputData) => void
+  onCancel: () => void
 }
 
 export function CompanyForm({
@@ -35,26 +35,26 @@ export function CompanyForm({
   onSubmit,
   onCancel,
 }: CompanyFormProps) {
-  const [name, setName] = useState(defaultValues?.name || "");
+  const [name, setName] = useState(defaultValues?.name || "")
   const [status, setStatus] = useState<CompanyStatus>(
     defaultValues?.status || COMPANY_STATUS.ACTIVE
-  );
+  )
 
   useEffect(() => {
     if (defaultValues) {
-      setName(defaultValues.name || "");
-      setStatus(defaultValues.status || COMPANY_STATUS.ACTIVE);
+      setName(defaultValues.name || "")
+      setStatus(defaultValues.status || COMPANY_STATUS.ACTIVE)
     }
-  }, [defaultValues]);
+  }, [defaultValues])
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!name || !status) {
-      alert("Por favor, preencha todos os campos.");
-      return;
+      alert("Por favor, preencha todos os campos.")
+      return
     }
-    onSubmit({ name, status });
+    onSubmit({ name, status })
   }
 
   return (
@@ -69,7 +69,7 @@ export function CompanyForm({
           type="text"
           value={name}
           placeholder="Digite o nome da empresa"
-          onChange={(e) => setName(e.target.value)}
+          onChange={e => setName(e.target.value)}
           required
         />
       </div>
@@ -86,7 +86,7 @@ export function CompanyForm({
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Status</SelectLabel>
-              {Object.values(COMPANY_STATUS).map((statusValue) => (
+              {Object.values(COMPANY_STATUS).map(statusValue => (
                 <SelectItem key={statusValue} value={statusValue}>
                   {statusValue}
                 </SelectItem>
@@ -102,5 +102,5 @@ export function CompanyForm({
         <Button type="submit">Salvar</Button>
       </div>
     </form>
-  );
+  )
 }
