@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
 import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
-import Menu from "@/components/layout/Header"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 

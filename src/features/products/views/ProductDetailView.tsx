@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { useProducts } from "../hooks/useProducts"
 import { type Product } from "../schemas/products.schema"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function ProductDetailView() {
   const { id } = useParams<{ id: string }>()
@@ -35,8 +36,10 @@ export default function ProductDetailView() {
 
       <div className="flex flex-col md:flex-row gap-6 md:gap-8">
         <div className="flex justify-center md:justify-center flex-1">
-          <img
+          <Image
             src={product.imageUrl}
+            width={500}
+            height={500}
             alt={product.name}
             className="object-cover rounded max-h-96 w-full"
           />
