@@ -17,8 +17,8 @@ export interface Company {
   zip_code: number
   latitude: number
   longitude: number
-  createdAt: string
-  updatedAt?: string | null
+  created_at: string
+  updated_at?: string | null
 }
 
 export interface CompanyInputData {
@@ -72,6 +72,6 @@ export interface CompanySearchData {
   zip_code: number
   latitude: number
   longitude: number
-  createdAt: string
-  updatedAt?: string | null
+  created_at: string
+  updated_at?: string | null
 }

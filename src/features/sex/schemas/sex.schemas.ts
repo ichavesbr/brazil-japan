@@ -1,8 +1,8 @@
 export interface Sex {
   id: string
   description: string
-  createdAt: Date
-  updatedAt?: Date | null
+  created_at: string
+  updated_at?: string | null
 }
 
 export interface SexInputData {
@@ -16,6 +16,6 @@ export interface SexUpdateData {
 export interface SexSearchData {
   id: string
   description: string
-  createdAt: Date
-  updatedAt?: Date | null
+  created_at: string
+  updated_at?: string | null
 }
