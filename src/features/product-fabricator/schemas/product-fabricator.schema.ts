@@ -6,17 +6,17 @@ export interface ProductFabricator {
   updated_at?: string | null
 }
 
-export interface ProductCategorFabricator {
+export interface ProductFabricatorInputData {
   description: string
   status_id: string
 }
 
-export interface ProductCategoryFabricator {
+export interface ProductFabricatorUpdateData {
   description: string
   status_id: string
 }
 
-export interface ProductCategoryFabricator {
+export interface ProductFabricatorSearchData {
   id: string
   description: string
   status_id: string
