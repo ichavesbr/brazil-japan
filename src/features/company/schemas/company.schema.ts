@@ -1,5 +1,5 @@
 export interface Company {
-  id: string
+  id: number
   national_registry: string
   name: string
   fantasy: string
@@ -12,13 +12,13 @@ export interface Company {
   number: number
   complement: string
   district: string
-  city_id: string
-  state_id: string
+  city_id: number
+  state_id: number
   zip_code: number
   latitude: number
   longitude: number
-  created_at: string
-  updated_at?: string | null
+  created_at: Date
+  updated_at?: Date
 }
 
 export interface CompanyInputData {
@@ -38,40 +38,40 @@ export interface CompanyInputData {
 }
 
 export interface CompanyUpdateData {
-  national_registry: string
-  name: string
-  fantasy: string
-  state_registration: string
-  municipal_registration: string
-  phone: number
-  whatsapp: number
-  email: string
-  endress: string
-  number: number
-  complement: string
-  district: string
-  zip_code: number
+  national_registry?: string
+  name?: string
+  fantasy?: string
+  state_registration?: string
+  municipal_registration?: string
+  phone?: number
+  whatsapp?: number
+  email?: string
+  endress?: string
+  number?: number
+  complement?: string
+  district?: string
+  zip_code?: number
+  updated_at: Date
 }
 
 export interface CompanySearchData {
-  id: string
-  national_registry: string
-  name: string
-  fantasy: string
-  state_registration: string
-  municipal_registration: string
-  phone: number
-  whatsapp: number
-  email: string
-  endress: string
-  number: number
-  complement: string
-  district: string
-  city_id: string
-  state_id: string
-  zip_code: number
-  latitude: number
-  longitude: number
-  created_at: string
-  updated_at?: string | null
+  id?: number
+  national_registry?: string
+  name?: string
+  fantasy?: string
+  state_registration?: string
+  municipal_registration?: string
+  phone?: number
+  whatsapp?: number
+  email?: string
+  endress?: string
+  number?: number
+  complement?: string
+  district?: string
+  city_id?: number
+  state_id?: number
+  zip_code?: number
+  latitude?: number
+  longitude?: number
+  created_at?: Date
 }

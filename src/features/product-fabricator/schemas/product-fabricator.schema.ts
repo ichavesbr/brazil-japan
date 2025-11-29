@@ -1,25 +1,22 @@
 export interface ProductFabricator {
-  id: string
+  id: number
+  status_id: number
   description: string
-  status_id: string
-  created_at: string
-  updated_at?: string | null
+  created_at: Date
+  updated_at?: Date
 }
 
 export interface ProductFabricatorInputData {
   description: string
-  status_id: string
 }
 
 export interface ProductFabricatorUpdateData {
-  description: string
-  status_id: string
+  description?: string
+  updated_at: Date
 }
 
 export interface ProductFabricatorSearchData {
-  id: string
-  description: string
-  status_id: string
-  created_at: string
-  updated_at?: string | null
+  id?: number
+  description?: string
+  created_at?: Date
 }

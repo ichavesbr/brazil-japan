@@ -1,8 +1,9 @@
 export interface Sex {
-  id: string
+  id: number
+  state_id: number
   description: string
-  created_at: string
-  updated_at?: string | null
+  created_at: Date
+  updated_at?: Date
 }
 
 export interface SexInputData {
@@ -10,12 +11,12 @@ export interface SexInputData {
 }
 
 export interface SexUpdateData {
-  description: string
+  description?: string
+  updated_at: Date
 }
 
 export interface SexSearchData {
-  id: string
-  description: string
-  created_at: string
-  updated_at?: string | null
+  id?: number
+  description?: string
+  created_at?: Date
 }

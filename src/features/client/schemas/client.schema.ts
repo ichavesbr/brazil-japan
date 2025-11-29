@@ -1,9 +1,9 @@
 export interface Client {
-  id: string
+  id: number
   document_cpf: number
   name: string
   date_of_birth: number
-  sexo_id: string
+  sexo_id: number
   phone: number
   whatsapp: number
   email: string
@@ -11,12 +11,12 @@ export interface Client {
   number: number
   complement: string
   district: string
-  city_id: string
-  state_id: string
+  city_id: number
+  state_id: number
   zip_code: number
-  status_id: string
-  created_at: string
-  updated_at?: string | null
+  status_id: number
+  created_at: Date
+  updated_at?: Date
 }
 
 export interface ClientInputData {
@@ -34,36 +34,36 @@ export interface ClientInputData {
 }
 
 export interface ClientUpdateData {
-  document_cpf: number
-  name: string
-  date_of_birth: number
-  phone: number
-  whatsapp: number
-  email: string
-  endress: string
-  number: number
-  complement: string
-  district: string
-  zip_code: number
+  document_cpf?: number
+  name?: string
+  date_of_birth?: number
+  phone?: number
+  whatsapp?: number
+  email?: string
+  endress?: string
+  number?: number
+  complement?: string
+  district?: string
+  zip_code?: number
+  updated_at: Date
 }
 
 export interface ClientSearchData {
-  id: string
-  document_cpf: number
-  name: string
-  date_of_birth: number
-  sexo_id: string
-  phone: number
-  whatsapp: number
-  email: string
-  endress: string
-  number: number
-  complement: string
-  district: string
-  city_id: string
-  state_id: string
-  zip_code: number
-  status_id: string
-  created_at: string
-  updated_at?: string | null
+  id?: number
+  document_cpf?: number
+  name?: string
+  date_of_birth?: number
+  sexo_id?: number
+  phone?: number
+  whatsapp?: number
+  email?: string
+  endress?: string
+  number?: number
+  complement?: string
+  district?: string
+  city_id?: number
+  state_id?: number
+  zip_code?: number
+  status_id?: number
+  created_at?: Date
 }

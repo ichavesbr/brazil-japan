@@ -1,21 +1,22 @@
 export interface ProductTypeUnit {
-  id: string
+  id: number
+  state_id: number
   description: string
-  created_at: string
-  updated_at?: string | null
+  created_at: Date
+  updated_at?: Date
 }
 
-export interface ProductTypeUnitFabricator {
-  description: string
-}
-
-export interface ProductTypeUnityFabricator {
+export interface ProductTypeUnitInputData {
   description: string
 }
 
-export interface ProductTypeUnityFabricator {
-  id: string
-  description: string
-  created_at: string
-  updated_at?: string | null
+export interface ProductTypeUnityUpdateData {
+  description?: string
+  updated_at: Date
+}
+
+export interface ProductTypeUnitySearchData {
+  id?: number
+  description?: string
+  created_at?: Date
 }
