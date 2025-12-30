@@ -13,7 +13,7 @@ const isInteger = (value: unknown): boolean => {
     return false
   }
 
-  return Number.isFinite(value) && Number.isInteger(value)
+  return isFiniteNumber(value) && Number.isInteger(value)
 }
 
 const isDecimal = (value: unknown): boolean => {
@@ -21,7 +21,7 @@ const isDecimal = (value: unknown): boolean => {
     return false
   }
 
-  return Number.isFinite(value) && !Number.isInteger(value)
+  return isFiniteNumber(value) && !isInteger(value)
 }
 
 export { isNumber, isFiniteNumber, isInteger, isDecimal }
